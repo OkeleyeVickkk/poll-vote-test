@@ -239,9 +239,9 @@ body:has([data-is-open="true"]) {
 	position: absolute;
 	border-radius: inherit;
 	background-color: rgba(var(--primary-clr-variant), 0.2);
-	animation: pulse 1s forwards ease infinite;
+	animation: pulsating 1s forwards ease infinite;
 }
-@keyframes pulse {
+@keyframes pulsating {
 	0% {
 		transform: scale(0.6);
 		opacity: 1;
