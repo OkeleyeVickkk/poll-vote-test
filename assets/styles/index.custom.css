@@ -59,6 +59,7 @@ body:has([data-is-open="true"]) {
 	top: 1.45rem;
 	width: var(--size);
 	height: var(--size);
+	color: var(--sec-clr);
 	transition: 300ms ease-in-out;
 	padding: 3px;
 }
@@ -395,6 +396,7 @@ body:has([data-is-open="true"]) {
 	text-transform: capitalize;
 	padding: 0.8rem 1rem;
 	border-radius: 8px;
+	color: var(--sec-clr);
 }
 .v-board-skin .v-icon {
 	color: var(--sec-clr);
