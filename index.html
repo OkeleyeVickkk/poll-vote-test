@@ -8,6 +8,8 @@
 		<link rel="stylesheet" href="./assets/styles/header.custom.css" />
 		<link rel="stylesheet" href="./assets/styles/index.custom.css" />
 		<link rel="stylesheet" href="./assets/styles/mediaquery.custom.css" />
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 		<title>Poll Vote Dashboard</title>
 	</head>
 	<body>
@@ -198,7 +200,7 @@
 								</div>
 								<div class="row col-12 m-0 align-items-stretch gap-xl-3 v-grid-cards row-gap-3">
 									<div class="col-12 col-md-6 col-xl p-0 v-card-skin">
-										<div class="v-card variant">
+										<div class="v-card variant animate__animated animate__fadeInLeft animate__faster">
 											<header class="v-card-header d-flex align-items-center gap-2">
 												<span class="pulse"></span>
 												<span class="v-card-title">Total Votes</span>
@@ -212,7 +214,7 @@
 										</div>
 									</div>
 									<div class="col-12 col-md-6 col-xl ps-md-3 ps-xl-0 p-0 v-card-skin">
-										<div class="v-card">
+										<div class="v-card animate__animated animate__fadeInUp animate__faster">
 											<header class="v-card-header d-flex align-items-center gap-2">
 												<span class="v-card-title">Highest Votes By Region</span>
 											</header>
@@ -225,7 +227,7 @@
 										</div>
 									</div>
 									<div class="col-12 col-md-6 col-xl p-0 v-card-skin">
-										<div class="v-card">
+										<div class="v-card animate__animated animate__fadeInUp animate__fast">
 											<header class="v-card-header d-flex align-items-center gap-2">
 												<span class="v-card-title">Leading Candidate Total Votes</span>
 											</header>
@@ -238,7 +240,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="v-board-skin d-flex flex-column">
+								<div class="v-board-skin d-flex flex-column animate__animated animate__fadeInUp">
 									<header class="v-board-header d-flex align-items-center justify-content-between">
 										<h5>Candidate Results</h5>
 										<a href="#" class="v-link"> View all </a>
@@ -262,7 +264,7 @@
 										<header class="v-board-header text-center">
 											<h6>Vote Distribution</h6>
 										</header>
-										<div class="p-3 d-flex align-items-center justify-content-center">
+										<div class="p-3 d-flex align-items-center justify-content-center animate__animated animate__zoomIn animate__slow">
 											<canvas id="myChart"></canvas>
 										</div>
 									</div>
