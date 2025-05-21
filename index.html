@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./assets/styles/bootstrap.min.css" />
+		<link rel="stylesheet" href="./assets/styles/default.css" />
+		<link rel="stylesheet" href="./assets/styles/header.custom.css" />
+		<link rel="stylesheet" href="./assets/styles/index.custom.css" />
+		<link rel="stylesheet" href="./assets/styles/mediaquery.custom.css" />
+		<title>Poll Vote Dashboard</title>
+	</head>
+	<body>
+		<div class="v-page-wrapper">
+			<div class="position-relative v-page-content-wrapper">
+				<!-- sidebar @::start -->
+				<aside class="v-sidebar-wrapper" id="sidebarWrapper" data-is-open="false">
+					<div class="v-sidebar-main">
+						<button class="v-trigger-close-sidebar d-xl-none" type="button" id="sidebarCloseBtn">
+							<span class="v-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+									<path
+										fill="none"
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="32"
+										d="M368 368L144 144m224 0L144 368" />
+								</svg>
+							</span>
+						</button>
+						<a href="#" title="Votera" class="text-white d-flex align-items-center">
+							<figure class="d-flex align-items-center justify-content-center v-full-logo">
+								<img src="./assets/images/logos/full-logo-icon.svg" alt="Votera image" class="img-fluid" />
+							</figure>
+						</a>
+						<div class="d-flex flex-column row-gap-2 mt-3">
+							<small class="v-title text-white-50 text-uppercase">Menu</small>
+							<ul class="v-sidebar-link-list">
+								<li>
+									<a href="#" class="v-sidebar-link">
+										<span class="v-icon">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+												<path
+													fill="none"
+													stroke="currentColor"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													stroke-width="1.5"
+													d="M8.557 2.75H4.682A1.93 1.93 0 0 0 2.75 4.682v3.875a1.94 1.94 0 0 0 1.932 1.942h3.875a1.94 1.94 0 0 0 1.942-1.942V4.682A1.94 1.94 0 0 0 8.557 2.75m10.761 0h-3.875a1.94 1.94 0 0 0-1.942 1.932v3.875a1.943 1.943 0 0 0 1.942 1.942h3.875a1.94 1.94 0 0 0 1.932-1.942V4.682a1.93 1.93 0 0 0-1.932-1.932m0 10.75h-3.875a1.94 1.94 0 0 0-1.942 1.933v3.875a1.94 1.94 0 0 0 1.942 1.942h3.875a1.94 1.94 0 0 0 1.932-1.942v-3.875a1.93 1.93 0 0 0-1.932-1.932M8.557 13.5H4.682a1.943 1.943 0 0 0-1.932 1.943v3.875a1.93 1.93 0 0 0 1.932 1.932h3.875a1.94 1.94 0 0 0 1.942-1.932v-3.875a1.94 1.94 0 0 0-1.942-1.942" />
+											</svg>
+										</span>
+										<span class="v-text">Overview</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="v-sidebar-link active">
+										<span class="v-icon">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+												<g fill="none" stroke="currentColor" stroke-width="1.5">
+													<path stroke-linecap="round" d="M22 22H2" />
+													<path
+														d="M21 22v-7.5a1.5 1.5 0 0 0-1.5-1.5h-3a1.5 1.5 0 0 0-1.5 1.5V22m0 0V5c0-1.414 0-2.121-.44-2.56C14.122 2 13.415 2 12 2s-2.121 0-2.56.44C9 2.878 9 3.585 9 5v17m0 0V9.5A1.5 1.5 0 0 0 7.5 8h-3A1.5 1.5 0 0 0 3 9.5V22" />
+												</g>
+											</svg>
+										</span>
+										<span class="v-text">Vote Analytics</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="v-sidebar-link">
+										<span class="v-icon">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+												<path
+													fill="none"
+													stroke="currentColor"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													stroke-width="2"
+													d="M5 7a4 4 0 1 0 8 0a4 4 0 1 0-8 0M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2m1-17.87a4 4 0 0 1 0 7.75M21 21v-2a4 4 0 0 0-3-3.85" />
+											</svg>
+										</span>
+										<span class="v-text">Candidates</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="v-sidebar-link">
+										<span class="v-icon">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256">
+												<path
+													fill="currentColor"
+													d="M128 24a104 104 0 1 0 104 104A104.12 104.12 0 0 0 128 24m88 104a87.6 87.6 0 0 1-3.33 24h-38.51a157.4 157.4 0 0 0 0-48h38.51a87.6 87.6 0 0 1 3.33 24m-114 40h52a115.1 115.1 0 0 1-26 45a115.3 115.3 0 0 1-26-45m-3.9-16a140.8 140.8 0 0 1 0-48h59.88a140.8 140.8 0 0 1 0 48ZM40 128a87.6 87.6 0 0 1 3.33-24h38.51a157.4 157.4 0 0 0 0 48H43.33A87.6 87.6 0 0 1 40 128m114-40h-52a115.1 115.1 0 0 1 26-45a115.3 115.3 0 0 1 26 45m52.33 0h-35.62a135.3 135.3 0 0 0-22.3-45.6A88.29 88.29 0 0 1 206.37 88Zm-98.74-45.6A135.3 135.3 0 0 0 85.29 88H49.63a88.29 88.29 0 0 1 57.96-45.6M49.63 168h35.66a135.3 135.3 0 0 0 22.3 45.6A88.29 88.29 0 0 1 49.63 168m98.78 45.6a135.3 135.3 0 0 0 22.3-45.6h35.66a88.29 88.29 0 0 1-57.96 45.6" />
+											</svg>
+										</span>
+										<span class="v-text">Region</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="v-sidebar-link">
+										<span class="v-icon">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+												<path fill="currentColor" d="M10 18h8v2h-8zm0-5h12v2H10zm0 10h5v2h-5z" />
+												<path
+													fill="currentColor"
+													d="M25 5h-3V4a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v1H7a2 2 0 0 0-2 2v21a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2M12 4h8v4h-8Zm13 24H7V7h3v3h12V7h3Z" />
+											</svg>
+										</span>
+										<span class="v-text">Reports</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<footer class="mt-auto v-sidebar-footer">
+							<a href="#" class="v-profile">
+								<figure class="v-profile-image">
+									<img src="./assets/images/avatars/avatar-1.jpg" alt="" class="img-fluid" />
+								</figure>
+								<div class="v-profile-content">
+									<h6 class="v-main-text">Okeleye Victor</h6>
+									<span class="v-subtext">okeleyevictor01@gmail.com</span>
+								</div>
+							</a>
+						</footer>
+					</div>
+				</aside>
+				<!-- sidebar @::end -->
+				<!-- content @::start -->
+				<aside class="v-content">
+					<header class="v-header d-flex justify-content-between align-items-center">
+						<div>
+							<a href="#" title="Votera" class="d-flex d-lg-none align-items-center">
+								<figure class="d-flex align-items-center justify-content-center v-icon-logo">
+									<img src="./assets/images/logos/logo-favicon.svg" alt="Votera image" class="img-fluid" />
+								</figure>
+							</a>
+							<h4 class="d-none d-lg-inline-block">Election 2025</h4>
+						</div>
+						<div class="d-flex align-items-center gap-3 gap-lg-4">
+							<form action="" class="v-form position-relative d-none d-md-inline-block">
+								<input type="search" name="search" class="form-control" placeholder="Enter search..." />
+								<button type="button" class="v-trigger-search">
+									<span class="v-icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+											<path
+												fill="none"
+												stroke="currentColor"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												stroke-width="2"
+												d="m20 20l-4.05-4.05m0 0a7 7 0 1 0-9.9-9.9a7 7 0 0 0 9.9 9.9" />
+										</svg>
+									</span>
+								</button>
+							</form>
+							<button type="button">
+								<figure class="v-profile-image">
+									<img src="./assets/images/avatars/avatar-1.jpg" alt="Avatar profile image" class="img-fluid" />
+								</figure>
+							</button>
+							<button type="button" class="v-mobile-menu-trigger d-xl-none" id="sidebarOpenBtn">
+								<span class="v-icon">
+									<svg style="--size: 1.8rem" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 14 14">
+										<path
+											fill="none"
+											stroke="currentColor"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											d="M.75 4.5h12.5m-12.5 5h12.5"
+											stroke-width="1" />
+									</svg>
+								</span>
+							</button>
+						</div>
+					</header>
+					<main class="v-content-container">
+						<div class="row col-12 m-0 align-items-stretch h-100">
+							<aside class="col-xl-8 v-content-main d-flex flex-column row-gap-4 p-3">
+								<div class="d-flex flex-wrap align-items-center row-gap-2 column-gap-4 v-pre-grid justify-content-between">
+									<div class="v-page-title">
+										<h3>Vote Analytics</h3>
+										<small class="v-text">Analysis of candidate performance and overall voting results.</small>
+									</div>
+									<div class="d-flex align-items-center v-date-skin">
+										<span class="v-icon">
+											<svg style="--size: 1.2rem" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+												<path
+													fill="currentColor"
+													d="M17 14a1 1 0 1 0 0-2a1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2a1 1 0 0 0 0 2m-4-5a1 1 0 1 1-2 0a1 1 0 0 1 2 0m0 4a1 1 0 1 1-2 0a1 1 0 0 1 2 0m-6-3a1 1 0 1 0 0-2a1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2a1 1 0 0 0 0 2" />
+												<path
+													fill="currentColor"
+													fill-rule="evenodd"
+													d="M7 1.75a.75.75 0 0 1 .75.75v.763c.662-.013 1.391-.013 2.193-.013h4.113c.803 0 1.532 0 2.194.013V2.5a.75.75 0 0 1 1.5 0v.827q.39.03.739.076c1.172.158 2.121.49 2.87 1.238c.748.749 1.08 1.698 1.238 2.87c.153 1.14.153 2.595.153 4.433v2.112c0 1.838 0 3.294-.153 4.433c-.158 1.172-.49 2.121-1.238 2.87c-.749.748-1.698 1.08-2.87 1.238c-1.14.153-2.595.153-4.433.153H9.945c-1.838 0-3.294 0-4.433-.153c-1.172-.158-2.121-.49-2.87-1.238c-.748-.749-1.08-1.698-1.238-2.87c-.153-1.14-.153-2.595-.153-4.433v-2.112c0-1.838 0-3.294.153-4.433c.158-1.172.49-2.121 1.238-2.87c.749-.748 1.698-1.08 2.87-1.238q.35-.046.739-.076V2.5A.75.75 0 0 1 7 1.75M5.71 4.89c-1.005.135-1.585.389-2.008.812S3.025 6.705 2.89 7.71q-.034.255-.058.539h18.336q-.024-.284-.058-.54c-.135-1.005-.389-1.585-.812-2.008s-1.003-.677-2.009-.812c-1.027-.138-2.382-.14-4.289-.14h-4c-1.907 0-3.261.002-4.29.14M2.75 12c0-.854 0-1.597.013-2.25h18.474c.013.653.013 1.396.013 2.25v2c0 1.907-.002 3.262-.14 4.29c-.135 1.005-.389 1.585-.812 2.008s-1.003.677-2.009.812c-1.027.138-2.382.14-4.289.14h-4c-1.907 0-3.261-.002-4.29-.14c-1.005-.135-1.585-.389-2.008-.812s-.677-1.003-.812-2.009c-.138-1.027-.14-2.382-.14-4.289z"
+													clip-rule="evenodd" />
+											</svg>
+										</span>
+										<span class="lh-1 d-inline-block v-text"> May 2025</span>
+									</div>
+								</div>
+								<div class="row col-12 m-0 align-items-stretch gap-xl-3 v-grid-cards row-gap-3">
+									<div class="col-12 col-md-6 col-xl p-0 v-card-skin">
+										<div class="v-card variant">
+											<header class="v-card-header d-flex align-items-center gap-2">
+												<span class="pulse"></span>
+												<span class="v-card-title">Total Votes</span>
+											</header>
+											<div class="v-card-content">
+												<h1 class="v-num">4,700</h1>
+											</div>
+											<footer class="v-card-footer">
+												<small class="v-text">May 20th, 2025</small>
+											</footer>
+										</div>
+									</div>
+									<div class="col-12 col-md-6 col-xl ps-md-3 ps-xl-0 p-0 v-card-skin">
+										<div class="v-card">
+											<header class="v-card-header d-flex align-items-center gap-2">
+												<span class="v-card-title">Highest Votes By Region</span>
+											</header>
+											<div class="v-card-content">
+												<h1 class="v-num">1,450</h1>
+											</div>
+											<footer class="v-card-footer">
+												<small class="v-text">Lagos</small>
+											</footer>
+										</div>
+									</div>
+									<div class="col-12 col-md-6 col-xl p-0 v-card-skin">
+										<div class="v-card">
+											<header class="v-card-header d-flex align-items-center gap-2">
+												<span class="v-card-title">Leading Candidate Total Votes</span>
+											</header>
+											<div class="v-card-content">
+												<h1 class="v-num">1,500</h1>
+											</div>
+											<footer class="v-card-footer">
+												<small class="v-text">Jane Smith (Party DEF)</small>
+											</footer>
+										</div>
+									</div>
+								</div>
+								<div class="v-board-skin d-flex flex-column">
+									<header class="v-board-header d-flex align-items-center justify-content-between">
+										<h5>Candidate Results</h5>
+										<a href="#" class="v-link"> View all </a>
+									</header>
+									<div class="v-custom-table flex-grow-1">
+										<header class="v-table-header">
+											<span><b>#</b></span>
+											<span>Name</span>
+											<span>Party</span>
+											<span>No. of Votes</span>
+											<span>Position</span>
+											<span>Action</span>
+										</header>
+										<ul class="v-table-body" id="table-body"></ul>
+									</div>
+								</div>
+							</aside>
+							<aside class="col-xl-4 v-content-sub p-3">
+								<div class="d-flex flex-column row-gap-4">
+									<div class="v-board-skin">
+										<header class="v-board-header text-center">
+											<h6>Vote Distribution</h6>
+										</header>
+										<div class="p-3 d-flex align-items-center justify-content-center">
+											<canvas id="myChart"></canvas>
+										</div>
+									</div>
+									<div></div>
+								</div>
+							</aside>
+						</div>
+					</main>
+				</aside>
+				<!-- content @::end -->
+
+				<!-- Modal -->
+				<div
+					class="modal fade"
+					id="staticBackdrop"
+					data-bs-backdrop="static"
+					data-bs-keyboard="false"
+					tabindex="-1"
+					aria-labelledby="staticBackdropLabel"
+					aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header border-0">
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<div class="d-flex flex-column row-gap-3">
+									<div class="d-flex align-items-center justify-content-center mb-4">
+										<figure class="v-modal-image">
+											<img src="" alt="" class="img-fluid" />
+										</figure>
+									</div>
+									<div class="v-simple-grid-container">
+										<div class="v-subgrid-item">
+											<span>Name</span>
+											<h3 data-name></h3>
+										</div>
+										<div class="v-subgrid-item">
+											<span>Position</span>
+											<h3 data-position></h3>
+										</div>
+										<div class="v-subgrid-item">
+											<span>Number of Votes</span>
+											<h3 data-num-of-vote></h3>
+										</div>
+										<div class="v-subgrid-item">
+											<span>Party</span>
+											<h3 data-party></h3>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script src="./assets/js/bootstrap.bundle.min.js"></script>
+		<script src="./assets/js/index.custom.js"></script>
+	</body>
+</html>

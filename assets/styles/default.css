@@ -1,0 +1,87 @@
+@font-face {
+	font-family: NeueHaasDisplayLight;
+	src: url("../fonts/NeueHaasDisplayLight.ttf");
+}
+@font-face {
+	font-family: NeueHaasDisplayMedium;
+	src: url("../fonts/NeueHaasDisplayRoman.ttf");
+}
+@font-face {
+	font-family: NeueHaasDisplayBold;
+	src: url("../fonts/NeueHaasDisplayMedium.ttf");
+}
+:root {
+	--fallback-fonts: system-ui, Verdana, Arial, Helvetica, sans-serif;
+	--font-family-light: NeueHaasDisplayLight, var(--fallback-fonts);
+	--font-family-medium: NeueHaasDisplayMedium, var(--fallback-fonts);
+	--font-family-heavy: NeueHaasDisplayBold, var(--fallback-fonts);
+
+	--primary-clr-variant: 175, 226, 49;
+	--sec-clr-variant: 2, 34, 19;
+	--white-variant: 255, 255, 255;
+	--black-variant: 0, 0, 0;
+
+	--primary-clr: rgba(var(--primary-clr-variant), 1);
+	--sec-clr: rgba(var(--sec-clr-variant), 1);
+	--white: rgba(var(--white-variant), 1);
+	--black: rgba(var(--black-variant), 1);
+
+	--sidebar-main-width: 295px;
+	--max-z-index: 10;
+
+	--border-line: 1px solid rgba(var(--black-variant), 0.15);
+}
+:is(*, *::before, *::after) {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-kerning: none;
+}
+:is(h1, h2, h3, h4, h5, h6, p, figure) {
+	margin: 0;
+	padding: 0;
+}
+:is(ul, li) {
+	list-style: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+[type="button"],
+[href],
+a,
+button {
+	background-color: transparent;
+	transition: 280ms ease-in-out;
+	border: none;
+	text-decoration: none;
+}
+*:not(h1, h2, h3, h4, h5, h6, b, strong) {
+	font-family: var(--font-family-medium);
+}
+:is(h1, h2, h3, h4, h5, h6, b, strong) {
+	font-family: var(--font-family-heavy);
+}
+.v-icon {
+	--size: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	user-select: none;
+}
+.v-icon svg {
+	width: var(--size);
+	height: var(--size);
+}
+input:focus,
+.form-control:focus {
+	box-shadow: none;
+}
+input[type="search"],
+input[type="search"]::-webkit-search-cancel-button {
+	appearance: none;
+	-webkit-appearance: none;
+}
+::selection {
+	background-color: rgba(var(--primary-clr-variant), 0.2);
+}
