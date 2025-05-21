@@ -130,6 +130,18 @@
 		});
 	}
 
+	function initCounters() {
+		const counterUp = window?.counterUp.default;
+		const allCounters = document.querySelectorAll(".v-card .v-num");
+		console.log(allCounters);
+		if (!allCounters.length) return;
+		allCounters.forEach((el) => {
+			counterUp(el, {
+				duration: 5000,
+			});
+		});
+	}
+
 	function initApp() {
 		const shadow = document.createElement("div");
 		shadow.id = "shadow";
@@ -139,6 +151,7 @@
 		sortedArray = pollElectionData.sort((current, next) => next.votes - current.votes);
 
 		initChart();
+		initCounters();
 		triggerSidebar();
 		triggerContestantData();
 	}
