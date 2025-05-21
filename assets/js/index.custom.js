@@ -47,6 +47,11 @@
 					{
 						label: "No of Votes",
 						data: getData(pollElectionData, "votes"),
+						backgroundColor: [
+							"#85ed27", // ABC
+							"#000", // DEF
+							"#ddd", // GHI
+						],
 						borderWidth: 1,
 					},
 				],
@@ -133,7 +138,6 @@
 	function initCounters() {
 		const counterUp = window?.counterUp.default;
 		const allCounters = document.querySelectorAll(".v-card .v-num");
-		console.log(allCounters);
 		if (!allCounters.length) return;
 		allCounters.forEach((el) => {
 			counterUp(el, {
