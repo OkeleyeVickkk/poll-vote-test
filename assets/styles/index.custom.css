@@ -142,6 +142,9 @@ body:has([data-is-open="true"]) {
 	display: flex;
 	border-radius: 50%;
 }
+.v-page-content-wrapper .v-mobile-menu-trigger {
+	color: var(--sec-clr);
+}
 .v-page-content-wrapper .v-profile .v-main-text {
 	letter-spacing: 0.4px;
 	font-size: 0.9rem;
