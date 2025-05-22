@@ -7,6 +7,7 @@
 			votes: 1500,
 			winner: false,
 			position: "2nd",
+			color: "#000",
 			medal: "./assets/images/svgs/silver-medal-icon.svg",
 		},
 		{
@@ -15,6 +16,7 @@
 			party: "DEF",
 			votes: 2000,
 			winner: true,
+			color: "#85ed27",
 			medal: "./assets/gifs/winner.gif",
 			position: "1st",
 		},
@@ -26,6 +28,7 @@
 			winner: false,
 			medal: "./assets/images/svgs/bronze-medal-icon.svg",
 			position: "3rd",
+			color: "#ddd",
 		},
 	];
 
@@ -33,7 +36,7 @@
 
 	function getData(data, key) {
 		if (!data || !key) return;
-		return sortedArray.map((item) => item[key]);
+		return data.map((item) => item[key]);
 	}
 
 	function initChart() {
@@ -47,11 +50,7 @@
 					{
 						label: "No of Votes",
 						data: getData(pollElectionData, "votes"),
-						backgroundColor: [
-							"#85ed27", // ABC
-							"#000", // DEF
-							"#ddd", // GHI
-						],
+						backgroundColor: getData(pollElectionData, "color"),
 						borderWidth: 1,
 					},
 				],
@@ -138,7 +137,7 @@
 	function initCounters() {
 		const counterUp = window?.counterUp.default;
 		const allCounters = document.querySelectorAll(".v-card .v-num");
-		if (!allCounters.length) return;
+		if (!allCounters.length || !counterUp) return;
 		allCounters.forEach((el) => {
 			counterUp(el, {
 				duration: 5000,

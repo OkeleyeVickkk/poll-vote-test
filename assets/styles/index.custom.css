@@ -271,6 +271,14 @@ body:has([data-is-open="true"]) {
 .v-grid-cards .variant .v-num {
 	color: var(--primary-clr);
 }
+.v-grid-cards .v-card-footer {
+	-webkit-box-orient: vertical;
+	white-space: nowrap;
+	max-width: 200px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin-top: auto;
+}
 .v-grid-cards .variant .v-card-footer .v-text {
 	color: var(--white);
 	opacity: 80%;
@@ -288,6 +296,8 @@ body:has([data-is-open="true"]) {
 	border: var(--border-line);
 	border-radius: 1rem;
 	min-height: 300px;
+	display: flex;
+	flex-direction: column;
 }
 .v-board-skin .v-board-header {
 	padding: 1rem;
